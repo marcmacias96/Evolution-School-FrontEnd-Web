@@ -24,6 +24,8 @@ import '@/permission' // permission control
  * please remove it before going online! ! !
  */
 import { mockXHR } from '../mock'
+
+import { createProvider } from './vue-apollo'
 if (process.env.NODE_ENV === 'production') {
   mockXHR()
 }
@@ -37,5 +39,6 @@ new Vue({
   el: '#app',
   router,
   store,
+  apolloProvider: createProvider(),
   render: h => h(App)
 })
